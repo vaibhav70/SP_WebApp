@@ -1,0 +1,83 @@
+USE [SuperstoreDB]
+GO
+
+/****** Object:  Table [dbo].[T_OrderReturns]    Script Date: 13-07-2024 04:49:44 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[T_OrderReturns](
+	[OrderId] [nvarchar](50) NOT NULL,
+	[Comments] [nvarchar](50) NOT NULL,
+ CONSTRAINT [PK_T_OrderReturns] PRIMARY KEY CLUSTERED 
+(
+	[OrderId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
+
+
+
+
+
+USE [SuperstoreDB]
+GO
+
+/****** Object:  Table [dbo].[T_Orders]    Script Date: 13-07-2024 04:50:36 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[T_Orders](
+	[OrderId] [nvarchar](50) NOT NULL,
+	[OrderDate] [date] NOT NULL,
+	[ShipDate] [date] NOT NULL,
+	[ShipMode] [nvarchar](50) NOT NULL,
+	[CustomerId] [nvarchar](50) NOT NULL,
+	[CustomerName] [nvarchar](50) NOT NULL,
+	[Segment] [nvarchar](50) NOT NULL,
+	[Country] [nvarchar](50) NOT NULL,
+	[City] [nvarchar](50) NOT NULL,
+	[State] [nvarchar](50) NOT NULL,
+	[Postal_Code] [int] NULL,
+	[Region] [nvarchar](50) NOT NULL,
+ CONSTRAINT [PK_T_Orders] PRIMARY KEY CLUSTERED 
+(
+	[OrderId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
+ 
+
+USE [SuperstoreDB]
+GO
+
+/****** Object:  Table [dbo].[T_Products]    Script Date: 13-07-2024 04:51:01 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[T_Products](
+	[OrderId] [nvarchar](50) NOT NULL,
+	[ProductId] [nvarchar](50) NOT NULL,
+	[Category] [nvarchar](50) NOT NULL,
+	[SubCategory] [nvarchar](50) NOT NULL,
+	[ProductName] [nvarchar](255) NOT NULL,
+	[Sales] [float] NOT NULL,
+	[Quantity] [tinyint] NOT NULL,
+	[Discount] [float] NOT NULL,
+	[Profit] [float] NULL
+) ON [PRIMARY]
+GO
+
+
